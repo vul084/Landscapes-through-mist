@@ -5,10 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Landscapes Through Mist — Mount Zhong</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Mount Zhong — First Draft</title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Playfair+Display:wght@400&display=swap"
@@ -19,63 +16,22 @@
 </head>
 
 <body>
-  <!-- This checkbox pauses the fog using CSS only. -->
-  <input class="motion-toggle" type="checkbox" id="pause-mist">
-
-  <label class="motion-control" for="pause-mist">
-    <span class="pause-label">Pause mist</span>
-    <span class="resume-label">Resume mist</span>
-  </label>
-
-  <!-- Fog stays in the browser window as you scroll. -->
-  <div class="fog fog--one" aria-hidden="true"></div>
-  <div class="fog fog--two" aria-hidden="true"></div>
-
-  <header class="hero" id="top">
-    <nav class="navigation" aria-label="Main navigation">
-      <a class="site-name" href="#top">
-        Landscapes Through Mist
-      </a>
-
-      <div class="navigation-links">
-        <a href="#artwork">Artwork</a>
-        <span aria-hidden="true">/</span>
-        <a href="#about">About</a>
-      </div>
+  <header id="top">
+    <nav>
+      <a href="#top">Landscapes Through Mist</a>
+      <a href="#artwork">Artwork</a>
     </nav>
 
-    <!-- Mountains and pavilion are CSS shapes. -->
+    <!-- Three mountain layers -->
     <div class="landscape" aria-hidden="true">
-      <div class="mountain mountain--far"></div>
-      <div class="mountain mountain--middle"></div>
-      <div class="mountain mountain--main"></div>
-      <div class="mountain mountain--front"></div>
+      <div class="mountain back"></div>
+      <div class="mountain middle"></div>
+      <div class="mountain front"></div>
 
-      <div class="landscape-mist"></div>
-
-      <div class="pavilion">
-        <div class="pavilion__roof"></div>
-
-        <div class="pavilion__room">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <!-- The same pine drawing used in the proposal. -->
-      <div class="trees">
-        <img
-          class="pine-drawing"
-          src="pine-trees.svg"
-          alt=""
-        >
-      </div>
+      <div class="fog"></div>
     </div>
 
-    <div class="hero-title">
-      <h1>Mount Zhong and Mount She</h1>
-    </div>
+    <h1>Mount Zhong and Mount She</h1>
 
     <a class="scroll-link" href="#artwork">
       Scroll to explore ↓
@@ -83,48 +39,47 @@
   </header>
 
   <main>
-    <section class="artwork-section" id="artwork">
+    <section id="artwork">
       <figure>
         <img
           src="mount-zhong.jpg"
-          alt="Museum photograph of Mount Zhong, showing layered mountains, buildings, and trees."
+          alt="Mount Zhong, a landscape painting with layered mountains, trees, and small buildings."
         >
 
         <figcaption>
-          Photographed at The Met by Linh Vu.
+          Photograph by Linh Vu, taken at The Met.
         </figcaption>
       </figure>
 
-      <div class="artwork-copy">
-        <p class="eyebrow">The original artwork</p>
+      <div class="artwork-text">
+        <p class="label">The original artwork</p>
 
         <h2>Mount Zhong</h2>
 
         <p class="citation">
-          Hu Yukun · 1660<br>
+          Hu Yukun, 1660<br>
           From <cite>Views of Nanjing for Zhou Lianggong</cite><br>
-          Ink and color on paper
+          Ink and color on paper<br>
+          The Metropolitan Museum of Art
         </p>
 
         <p>
-          I was drawn to the layers of mountains and the way the
-          mist leaves parts of the landscape hidden. For this
-          draft, I focused on the tall central peak, dark pines,
-          and the small pavilion.
+          "This album depicts twelve sites in and around Nanjing, ranging from the festive Qinhuai pleasure district to the solemn tomb of the first Ming emperor. More than just famous locations, these are places laden with historical significance and cultural memory. For the recipient of the album, Zhou Lianggong, who lived through the violent overthrow of the Ming dynasty, these pictures would have called to mind experiences from a lost world—evenings with friends at Qinhuai, or commemoration rituals at the emperor’s mausoleum. Painting with a tattered brush, Hu Yukun infused his misty scenes with the sense of a place seen through the haze of memory."
         </p>
 
+
         <a
-          class="text-link"
+          class="source-link"
           href="https://www.metmuseum.org/art/collection/search/65627"
           target="_blank"
           rel="noopener noreferrer"
         >
-          View the album at The Met ↗
+          View the museum record ↗
         </a>
       </div>
     </section>
+  </main>
+</body>
 
-    <section class="about-section" id="about">
-      <p class="eyebrow">About this recreation</p>
-
+</html>
     

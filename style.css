@@ -1,4 +1,4 @@
-/* BASIC STYLING */
+/* Basic styling */
 
 * {
   box-sizing: border-box;
@@ -10,11 +10,11 @@ html {
 
 body {
   margin: 0;
-  background: #f0f2f2;
+  background-color: #f0f2f2;
   color: #344953;
   font-family: "Playfair Display", serif;
   font-size: 18px;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 a {
@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: #1e3542;
+  text-decoration: underline;
 }
 
 a:focus-visible {
@@ -31,394 +31,169 @@ a:focus-visible {
   outline-offset: 5px;
 }
 
-p {
-  margin: 0 0 1.3rem;
-}
+/* First screen */
 
-/* OPENING SCREEN */
-
-.hero {
+header {
   position: relative;
   height: 100vh;
-  min-height: 650px;
+  min-height: 600px;
   overflow: hidden;
-  background: #dde4e7;
+  background-color: #dde4e7;
 }
 
-/* NAVIGATION */
-
-.navigation {
+nav {
   position: relative;
-  z-index: 8;
+  z-index: 5;
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 24px;
+  gap: 20px;
 
-  padding: 28px 4%;
+  padding: 30px 5%;
   font-family: "Cinzel", serif;
   font-size: 13px;
 }
 
-.navigation-links {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* SMALL TITLE */
-
-.hero-title {
+h1 {
   position: absolute;
   top: 42%;
   left: 12%;
-  z-index: 8;
-}
+  z-index: 5;
 
-.hero-title h1 {
   margin: 0;
-  font-family: "Playfair Display", serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0;
 }
-
-/* SCROLL LINK */
 
 .scroll-link {
   position: absolute;
-  z-index: 8;
-  bottom: 20px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 5;
 
   font-family: "Cinzel", serif;
-  font-size: 12px;
+  font-size: 11px;
   white-space: nowrap;
 }
 
-/* LANDSCAPE CONTAINER */
+/* Container for the mountain shapes */
 
 .landscape {
   position: absolute;
-  inset: 15% 0 0;
+  top: 20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .mountain {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
 }
 
-/* DISTANT MOUNTAINS */
+/* Light mountain layer in the distance */
 
-.mountain--far {
+.back {
   z-index: 1;
-  background: #beced6;
+  background-color: #beced6;
 
   clip-path: polygon(
     0 60%,
-    9% 48%,
-    18% 54%,
-    28% 25%,
-    39% 40%,
-    49% 10%,
-    59% 32%,
-    70% 29%,
-    82% 46%,
-    91% 35%,
-    100% 51%,
+    15% 40%,
+    28% 55%,
+    45% 10%,
+    60% 42%,
+    75% 30%,
+    100% 60%,
     100% 100%,
     0 100%
   );
 }
 
-/* MIDDLE MOUNTAINS */
+/* Tall central mountain */
 
-.mountain--middle {
+.middle {
   z-index: 2;
-  background: #93a9b5;
-  opacity: 0.68;
+  background-color: #93a9b5;
 
   clip-path: polygon(
     0 85%,
-    12% 65%,
-    23% 52%,
-    31% 66%,
-    43% 40%,
-    54% 33%,
-    64% 57%,
-    75% 68%,
-    85% 63%,
-    100% 87%,
+    22% 70%,
+    38% 40%,
+    52% 5%,
+    62% 30%,
+    75% 62%,
+    100% 85%,
     100% 100%,
     0 100%
   );
 }
 
-/* TALL CENTRAL PEAK */
+/* Darker foreground hills */
 
-.mountain--main {
+.front {
   z-index: 3;
-
-  background: linear-gradient(
-    115deg,
-    #93a9b5,
-    #b8c7ce 64%,
-    #beced6
-  );
+  background-color: #748b99;
 
   clip-path: polygon(
-    18% 100%,
-    31% 65%,
-    36% 49%,
-    42% 31%,
-    49% 23%,
-    53% 7%,
-    57% 18%,
-    63% 26%,
-    67% 43%,
-    75% 55%,
-    84% 73%,
-    100% 91%,
-    100% 100%
-  );
-}
-
-/* FOREGROUND */
-
-.mountain--front {
-  z-index: 4;
-  top: 61%;
-  background: #748b99;
-
-  clip-path: polygon(
-    0 47%,
-    10% 33%,
-    18% 56%,
-    28% 28%,
-    38% 68%,
-    48% 51%,
-    57% 69%,
-    70% 40%,
-    83% 62%,
-    93% 39%,
-    100% 53%,
+    0 85%,
+    15% 70%,
+    30% 88%,
+    48% 72%,
+    65% 90%,
+    82% 74%,
+    100% 85%,
     100% 100%,
     0 100%
   );
 }
 
-/* SOFT MIST BETWEEN THE MOUNTAINS */
-
-.landscape-mist {
-  position: absolute;
-  z-index: 4;
-  inset: 25% -10% -4%;
-  filter: blur(18px);
-
-  background:
-    radial-gradient(
-      ellipse at 30% 45%,
-      #f0f2f2aa 0%,
-      transparent 45%
-    ),
-    radial-gradient(
-      ellipse at 75% 70%,
-      #f0f2f2cc 0%,
-      transparent 48%
-    );
-}
-
-/* PAVILION */
-
-.pavilion {
-  position: absolute;
-  z-index: 5;
-  left: 76%;
-  bottom: 24%;
-  width: 84px;
-  height: 58px;
-}
-
-.pavilion__roof {
-  height: 25px;
-  background: #637681;
-
-  clip-path: polygon(
-    0 95%,
-    15% 70%,
-    50% 0,
-    85% 70%,
-    100% 95%
-  );
-}
-
-.pavilion__room {
-  display: flex;
-  justify-content: space-around;
-
-  margin: 0 12px;
-  height: 33px;
-  background: #e5e8e7;
-}
-
-.pavilion__room span {
-  width: 3px;
-  background: #788b94;
-}
-
-/* ORIGINAL PINE DRAWING */
-
-.trees {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.pine-drawing {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* MOVING FOG */
+/* One moving fog layer */
 
 .fog {
-  position: fixed;
-  z-index: 6;
+  position: absolute;
+  top: 40%;
+  left: -30%;
+  z-index: 4;
+
+  width: 150%;
+  height: 35%;
   pointer-events: none;
 
-  width: 120vw;
-  left: -20vw;
-  height: 34vh;
-
-  filter: blur(22px);
-  opacity: 0.78;
-
-  background:
-    radial-gradient(
-      ellipse at 23% 58%,
-      #f7f9f8e6 0%,
-      #f7f9f878 22%,
-      transparent 46%
-    ),
-    radial-gradient(
-      ellipse at 68% 42%,
-      #f7f9f8d9 0%,
-      #f7f9f870 18%,
-      transparent 43%
-    );
-
-  animation: drift 18s linear infinite alternate;
-}
-
-.fog--one {
-  top: 46vh;
-}
-
-.fog--two {
-  top: 73vh;
-  height: 22vh;
-  opacity: 0.58;
-
-  animation-duration: 26s;
-  animation-direction: alternate-reverse;
-
   background: radial-gradient(
-    ellipse at 35% 40%,
-    #f7f9f8eb 0%,
-    #f7f9f870 26%,
-    transparent 56%
+    ellipse,
+    rgba(240, 242, 242, 0.95) 0%,
+    rgba(240, 242, 242, 0.5) 40%,
+    transparent 70%
   );
+
+  filter: blur(25px);
+  animation: move-fog 18s linear infinite alternate;
 }
 
-@keyframes drift {
+@keyframes move-fog {
   from {
-    transform: translate(-18vw, 12px);
+    transform: translateX(-10%);
   }
 
   to {
-    transform: translate(28vw, -32px);
+    transform: translateX(20%);
   }
 }
 
-/* PAUSE CONTROL — CSS ONLY */
+/* Original artwork section */
 
-.motion-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.motion-control {
-  position: fixed;
-  z-index: 10;
-  right: 20px;
-  bottom: 16px;
-
-  padding: 8px 12px;
-  border: 1px solid #93a9b5;
-  border-radius: 2px;
-
-  background: #f0f2f2e6;
-  font-family: "Cinzel", serif;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-.resume-label {
-  display: none;
-}
-
-.motion-toggle:checked ~ .fog {
-  animation-play-state: paused;
-}
-
-.motion-toggle:checked + .motion-control .pause-label {
-  display: none;
-}
-
-.motion-toggle:checked + .motion-control .resume-label {
-  display: inline;
-}
-
-.motion-toggle:focus-visible + .motion-control {
-  outline: 2px solid #344953;
-  outline-offset: 3px;
-}
-
-/* ARTWORK DOCUMENTATION */
-
-main {
-  position: relative;
-}
-
-.artwork-copy,
-.about-section,
-figcaption,
-footer {
-  position: relative;
-  z-index: 8;
-}
-
-.artwork-section {
+#artwork {
   display: flex;
   align-items: center;
-  gap: 8%;
+  gap: 60px;
 
-  max-width: 1160px;
+  max-width: 1100px;
   margin: auto;
-  padding: 110px 5%;
-  scroll-margin-top: 20px;
+  padding: 90px 5%;
 }
 
 figure {
@@ -430,29 +205,43 @@ figure {
 figure img {
   display: block;
   width: 100%;
-  max-height: 630px;
-  object-fit: contain;
+  height: auto;
 }
 
 figcaption {
-  margin-top: 14px;
+  margin-top: 15px;
   font-family: "Cinzel", serif;
   font-size: 11px;
 }
 
-.artwork-copy {
+.artwork-text {
   flex: 1;
   min-width: 0;
 }
 
-.eyebrow {
+.label {
   font-family: "Cinzel", serif;
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 12px;
+}
+
+h2 {
+  margin: 15px 0 25px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.citation {
+  font-size: 14px;
+}
+
+.source-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #748b99;
+  font-size: 14px;
 }
 
 
 
-
-
- 
